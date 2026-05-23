@@ -3,8 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baran & Meryem</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 1rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            color: #2c2c2c;
+            background: #faf8f5;
+        }
+
+        .invitation {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 1.5rem;
+        }
+
+        .maps {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        .map-column {
+            margin: 0;
+            border: 1px solid #e0d8ce;
+            border-radius: 8px;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .map-trigger {
+            list-style: none;
+            cursor: pointer;
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            text-align: center;
+            background: #f3ede4;
+            user-select: none;
+            transition: background 0.2s ease;
+        }
+
+        .map-trigger::-webkit-details-marker {
+            display: none;
+        }
+
+        .map-trigger::after {
+            content: "konum bilgisi göster";
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #6b6358;
+        }
+
+        .map-column[open] .map-trigger {
+            background: #e8dfd2;
+        }
+
+        .map-column[open] .map-trigger::after {
+            content: "";
+        }
+
+        .map-trigger:hover,
+        .map-trigger:focus-visible {
+            background: #ebe3d8;
+            outline: 2px solid #b8a992;
+            outline-offset: -2px;
+        }
+
+        /* Loaded in DOM but hidden until the section is opened */
+        .map-frame {
+            position: relative;
+            width: 100%;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            transition: opacity 0.35s ease, height 0.35s ease;
+        }
+
+        .map-column[open] .map-frame {
+            height: min(450px, 70vh);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .map-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 640px) {
+            .maps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <img src="./invitation.PNG" alt="invitation">
+    <img class="invitation" src="./invitation.PNG" alt="Wedding invitation">
+
+    <div class="maps">
+        <details class="map-column">
+            <summary class="map-trigger">Nışan: 27 Haziran 19.00</summary>
+            <div class="map-frame">
+                <iframe
+                    title="Şelale Düğün & Davet Salonu"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1618.728068331564!2d28.89967579472705!3d41.09682104889918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab1aec5cdd48d%3A0xc204e547f19d7c46!2sWaterfall%20Cafe%20%26%20Bridal%20Shop!5e0!3m2!1sen!2str!4v1779571696236!5m2!1sen!2str"
+                    allowfullscreen=""
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </details>
+
+        <details class="map-column">
+            <summary class="map-trigger">Nikah: 11 Temmuz 18.00</summary>
+            <div class="map-frame">
+                <iframe
+                    title="Merinos Kır Bahçesi"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d380.9363537609941!2d29.04933183491821!3d40.19814349999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3f0000d29a93%3A0xb8a2afb3b7aee7d!2zTWVyaW5vcyBLxLFyIEJhaMOnZXNp!5e0!3m2!1sen!2str!4v1779571867461!5m2!1sen!2str"
+                    allowfullscreen=""
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </details>
+    </div>
 </body>
 </html>
