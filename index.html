@@ -123,6 +123,18 @@
             border: 0;
         }
 
+        .upload-row {
+            grid-column: 1 / -1;
+        }
+
+        .map-trigger--upload::after {
+            content: none;
+        }
+
+        .upload-row[open] .map-frame {
+            height: min(600px, 80vh);
+        }
+
         @media (max-width: 640px) {
             .maps {
                 grid-template-columns: 1fr;
@@ -151,6 +163,18 @@
                 <iframe
                     title="Merinos Kır Bahçesi"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d380.9363537609941!2d29.04933183491821!3d40.19814349999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3f0000d29a93%3A0xb8a2afb3b7aee7d!2zTWVyaW5vcyBLxLFyIEJhaMOnZXNp!5e0!3m2!1sen!2str!4v1779571867461!5m2!1sen!2str"
+                    allowfullscreen=""
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </details>
+
+        <details class="map-column upload-row">
+            <summary class="map-trigger map-trigger--upload">📸 Fotoğraf yükle</summary>
+            <div class="map-frame">
+                <iframe
+                    title="Fotoğraf yükle"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSf5NOh08iFkxT5uPZGFtwUHqtFPUeyO6N3bf19KbfguLmI7Uw/viewform?embedded=true"
                     allowfullscreen=""
                     referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
