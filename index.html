@@ -127,12 +127,22 @@
             grid-column: 1 / -1;
         }
 
-        .map-trigger--upload::after {
-            content: none;
+        .upload-link {
+            display: block;
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            background: #f3ede4;
+            transition: background 0.2s ease;
         }
 
-        .upload-row[open] .map-frame {
-            height: min(600px, 80vh);
+        .upload-link:hover,
+        .upload-link:focus-visible {
+            background: #ebe3d8;
+            outline: 2px solid #b8a992;
+            outline-offset: -2px;
         }
 
         @media (max-width: 640px) {
@@ -169,17 +179,14 @@
             </div>
         </details>
 
-        <details class="map-column upload-row">
-            <summary class="map-trigger map-trigger--upload">📸 Fotoğraf yükle</summary>
-            <div class="map-frame">
-                <iframe
-                    title="Fotoğraf yükle"
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSf5NOh08iFkxT5uPZGFtwUHqtFPUeyO6N3bf19KbfguLmI7Uw/viewform?embedded=true"
-                    allowfullscreen=""
-                    referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-            </div>
-        </details>
+        <div class="map-column upload-row">
+            <a
+                class="upload-link"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf5NOh08iFkxT5uPZGFtwUHqtFPUeyO6N3bf19KbfguLmI7Uw/viewform?usp=publish-editor"
+                target="_blank"
+                rel="noopener noreferrer"
+            >📸 Fotoğraf yükle</a>
+        </div>
     </div>
 </body>
 </html>
